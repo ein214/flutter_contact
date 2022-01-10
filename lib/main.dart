@@ -28,30 +28,13 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('앱임')
         ),
-        body: Container(
-          child: Text('안녕')
-        ),
-        /* bottomAppBar 써야했는데 NavigationBar로 해서 결과물이 달랐던듯
-        bottomNavigationBar: BottomNavigationBar(
-          items: [
-            BottomNavigationBarItem(icon: Icon(Icons.phone), label: ''),
-            BottomNavigationBarItem(icon: Icon(Icons.message), label: ''),
-            BottomNavigationBarItem(icon: Icon(Icons.contact_page), label: '')
-          ],
-        ),
-
-         */
-        bottomNavigationBar: BottomAppBar(
-          child: SizedBox(
-            height: 50,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Icon(Icons.phone),
-                Icon(Icons.message),
-                Icon(Icons.contact_page)
-              ],
-            ),
+        body: Align(
+          alignment: Alignment.bottomCenter,
+          child: Container(
+            width: double.infinity, height: 150, color: Colors.blue,
+            //margin: EdgeInsets.all(30),
+            //padding: EdgeInsets.all(5),
+            child: Text('테스트')
           ),
         ),
       )
