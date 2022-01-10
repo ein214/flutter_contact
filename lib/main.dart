@@ -26,16 +26,32 @@ class MyApp extends StatelessWidget {
        */
       home: Scaffold(
         appBar: AppBar(
-          title: Text('앱임'),
-          leading: Icon(Icons.star),
-          actions: [
-            Icon(Icons.phone)
-          ],
+          title: Text('앱임')
         ),
-        body: SizedBox(
-          child: IconButton(
-            icon: Icon(Icons.star),
-            onPressed: (){}
+        body: Container(
+          height: 120,
+          child: Container(
+            margin: EdgeInsets.all(10),
+            child: Expanded(
+              child: Row(
+                children: [
+                  Image.asset('test.png'),
+                  Column(
+                    children: [
+                      Text('캐논 DSLR 100D (단렌즈, 충전기 16기가 SD 포함)', ),
+                      Text('성동구 행당동·끌올 10분 전'),
+                      Text('210,000원'),
+                      Row(
+                        children: [
+                          Icon(Icons.favorite),
+                          Text('4')
+                        ],
+                      )
+                    ],
+                  )
+                ],
+              ),
+            ),
           )
         )
       )
