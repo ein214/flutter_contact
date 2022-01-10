@@ -26,17 +26,18 @@ class MyApp extends StatelessWidget {
        */
       home: Scaffold(
         appBar: AppBar(
-          title: Text('앱임')
+          title: Text('앱임'),
+          leading: Icon(Icons.star),
+          actions: [
+            Icon(Icons.phone)
+          ],
         ),
-        body: Align(
-          alignment: Alignment.bottomCenter,
-          child: Container(
-            width: double.infinity, height: 150, color: Colors.blue,
-            //margin: EdgeInsets.all(30),
-            //padding: EdgeInsets.all(5),
-            child: Text('테스트')
-          ),
-        ),
+        body: SizedBox(
+          child: IconButton(
+            icon: Icon(Icons.star),
+            onPressed: (){}
+          )
+        )
       )
     );
   }
