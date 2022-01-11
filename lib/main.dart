@@ -28,7 +28,14 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('앱임')
         ),
-        body: Container(
+        body: Row(
+          children: [
+            Expanded(child: Container(color: Colors.blue)),
+            Container(width:100, child: Container(color: Colors.red)),
+          ],
+        ),
+        /*
+          body: Container(
             width: double.infinity,
             height: 120,
             margin: EdgeInsets.all(5),
@@ -62,6 +69,8 @@ class MyApp extends StatelessWidget {
               ],
             )
           )
+
+         */
         )
       );
     }
