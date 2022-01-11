@@ -29,32 +29,40 @@ class MyApp extends StatelessWidget {
           title: Text('앱임')
         ),
         body: Container(
-          height: 120,
-          child: Container(
-            margin: EdgeInsets.all(10),
-            child: Expanded(
-              child: Row(
-                children: [
-                  Image.asset('test.png'),
-                  Column(
-                    children: [
-                      Text('캐논 DSLR 100D (단렌즈, 충전기 16기가 SD 포함)', ),
-                      Text('성동구 행당동·끌올 10분 전'),
-                      Text('210,000원'),
-                      Row(
-                        children: [
-                          Icon(Icons.favorite),
-                          Text('4')
-                        ],
-                      )
-                    ],
-                  )
-                ],
-              ),
-            ),
+            width: double.infinity,
+            height: 120,
+            margin: EdgeInsets.all(5),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: Image.asset('test2.PNG'),
+                ),
+                Expanded(
+                  child: Container(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('캐논 DSLR 100D (단렌즈, 충전기 16기가 SD 포함)'),
+                        Text('성동구 행당동·끌올 10분 전', style: TextStyle(color : Colors.grey, fontSize: 11),),
+                        Text('210,000원', style: TextStyle( fontWeight: FontWeight.bold, fontSize: 13)),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Icon(Icons.favorite_border),
+                            Text('4')
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            )
           )
         )
-      )
-    );
-  }
+      );
+    }
 }
