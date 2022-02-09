@@ -17,16 +17,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(),
-        bottomNavigationBar: BottomAppBar(),
+        bottomNavigationBar: BottomNavi(),
         body: ListView(
           children: [
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),Text('안녕'),Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),Text('안녕'),Text('안녕'),Text('안녕'),
-            Text('안녕'),Text('안녕'),Text('안녕'),Text('안녕'),Text('안녕'),Text('안녕'),
+            ListItem(),
+            ListItem(),
+            ListItem()
           ],
         ),
       ),
@@ -34,16 +30,42 @@ class MyApp extends StatelessWidget {
   }
 }
 
-/* stless 누르고 Tab키 누르고 사용 할 이름 추가 */
-class ShopItem extends StatelessWidget {
-  const ShopItem({Key? key}) : super(key: key);
+class ListItem extends StatelessWidget {
+  const ListItem({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
-    // 이부분에 함수 작업
-    return SizedBox(
-        child: Text('안녕')
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Icon(Icons.account_circle, size: 36,),
+        Padding(
+          padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+          child: Text('홍길동'),
+        )
+      ],
     );
+  }
+}
+
+
+class BottomNavi extends StatelessWidget {
+  const BottomNavi({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+      return BottomAppBar(
+          child: SizedBox(
+              height: 50,
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                      Icon(Icons.phone),
+                      Icon(Icons.message),
+                      Icon(Icons.contact_page)
+                  ],
+              )
+          )
+      );
   }
 }
