@@ -25,15 +25,42 @@ class MyApp extends StatelessWidget {
       )
        */
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('앱임')
-        ),
+        appBar: AppBar(),
+        body: Container(
+          height:150,
+          padding: EdgeInsets.all(10),
+          child: Row(
+            children: [
+              Image.asset('test2.PNG',  width: 150,),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('카메라팝니다'),
+                    Text('금호동 3가'),
+                    Text('7000원'),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Icon(Icons.favorite),
+                        Text('4')
+                      ],
+                    )
+                  ],
+                ),
+              )
+            ],
+          )
+        )
+        /*
         body: Row(
           children: [
             Expanded(child: Container(color: Colors.blue)),
             Container(width:100, child: Container(color: Colors.red)),
           ],
         ),
+
+         */
         /*
           body: Container(
             width: double.infinity,
