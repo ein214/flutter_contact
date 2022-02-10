@@ -4,10 +4,18 @@ void main() {
   runApp(MyApp());
 }
 
+
 //메인페이지 세팅
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   var a = 1;
+  var name = ['고은지1', '조성호', '청'];
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +25,18 @@ class MyApp extends StatelessWidget {
     //Flutter 앱 디자인은 위젯 짜집기
     return MaterialApp(
       home: Scaffold(
+        /*
         floatingActionButton: FloatingActionButton(
           child: Text(a.toString()),
           onPressed: (){
-            a++;
-            print(a);
+            setState(() {
+              a++;
+            });
           },
         ),
-        appBar: AppBar(),
+
+         */
+        appBar: AppBar( title: Text('앱')),
         bottomNavigationBar: BottomNavi(),
         body: ListView.builder(
             itemCount: 3,
@@ -32,7 +44,7 @@ class MyApp extends StatelessWidget {
               print(index);
               return ListTile(
                 leading: Icon(Icons.account_circle, size: 36,),
-                title: Text('홍길동')
+                title: Text(name[index])
               );
             }
         ),
