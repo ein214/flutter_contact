@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 //메인페이지 세팅
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
+  var a = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -16,20 +17,31 @@ class MyApp extends StatelessWidget {
     //Flutter 앱 디자인은 위젯 짜집기
     return MaterialApp(
       home: Scaffold(
+        floatingActionButton: FloatingActionButton(
+          child: Text(a.toString()),
+          onPressed: (){
+            a++;
+            print(a);
+          },
+        ),
         appBar: AppBar(),
         bottomNavigationBar: BottomNavi(),
-        body: ListView(
-          children: [
-            ListItem(),
-            ListItem(),
-            ListItem()
-          ],
+        body: ListView.builder(
+            itemCount: 3,
+            itemBuilder: (context, index) {
+              print(index);
+              return ListTile(
+                leading: Icon(Icons.account_circle, size: 36,),
+                title: Text('홍길동')
+              );
+            }
         ),
       ),
     );
   }
 }
 
+/// 과제 - 리스트 뿌리는 부분
 class ListItem extends StatelessWidget {
   const ListItem({Key? key}) : super(key: key);
 
