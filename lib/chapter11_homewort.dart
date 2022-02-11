@@ -145,6 +145,6 @@ class DialogUI extends StatelessWidget {
                 ]
             )
         )
-    );;
+    );
   }
 }
